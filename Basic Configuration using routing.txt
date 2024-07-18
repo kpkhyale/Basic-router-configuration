@@ -1,0 +1,94 @@
+Basic Configuration using routing
+
+Pune
+
+en
+conf t
+hostname Pune
+line vty 0 4
+password kiram
+exit
+
+line con 0
+password kiran
+exit
+
+line aux
+password kiran
+exit
+
+int fa0/0
+ip add 192.168.1.100 255.255.255.0
+no shut
+
+int s0/0
+ip add 10.0.0.1 255.0.0.0
+clock rate 64000
+band 64
+exit
+
+
+Mumbai 
+
+en
+conf t
+line vty 0 4
+password kiran
+exit
+
+line con 0 
+password kiran
+exit
+
+line aux 0
+password kiran
+exit
+
+int fa0/0
+ip add 192.168.2.100 255.255.255.0
+no shut
+exit
+
+int s0/0
+ip add 10.0.0.2 255.0.0.0
+no shut
+exit
+
+int s0/1
+ip add 11.0.0.1 255.0.0.0
+clock rate 64000
+band 64
+no shut
+exit
+
+
+
+Solaput
+
+
+en
+conf t 
+hostname Solapur
+
+line con 0
+password kiran
+exit
+
+line aux 0
+password kiran
+exit
+
+line vty 0 4
+password kiran
+exit
+
+
+int fa0/0
+ip add 192.168.3.100
+no shut
+exit
+
+int s0/1
+ip add 11.0.0.0 255.0.0.0
+no shut 
+
